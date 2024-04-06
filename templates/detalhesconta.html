@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance App - Detalhes das Contas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Adicione seu estilo CSS aqui */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="option-content">
+        <h1>Detalhes das Contas</h1>
+        <table id="contas-table">
+            <thead>
+                <tr>
+                    <th>CONTA</th>
+                    <th>VALOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Adicione as linhas dinamicamente aqui -->
+            </tbody>
+        </table>
+        <button onclick="adicionarConta()">Adicionar Conta</button>
+    </div>
+
+    <script>
+        function adicionarConta() {
+            var table = document.getElementById("contas-table").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = "<input type='text' placeholder='Nova Conta'>";
+            cell2.innerHTML = "<input type='text' placeholder='Valor'>";
+        }
+    </script>
+</body>
+</html>

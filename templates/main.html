@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="detalhescontas.html">Contas Mensais</a></li>
+                <li><a href="#" onclick="openOption('contas-bancarias')">Contas Bancárias</a></li>
+                <li><a href="#" onclick="openOption('planejamento-anual')">Planejamento Anual</a></li>
+                <li><a href="#" onclick="openOption('gastos-extras')">Gastos Extras</a></li>
+                <li><a href="#" onclick="openOption('ganhos-extras')">Ganhos Extras</a></li>
+                <li><a href="#" onclick="openOption('salarios')">Salários</a></li>
+                <li><a href="#" onclick="openOption('valores')">Valores</a></li>
+            </ul>
+        </div>
+        <div class="content" id="content">
+            <h2>Bem-vindo ao Finance App!</h2>
+            <p>Selecione uma opção no menu lateral para começar.</p>
+        </div>
+    </div>
+
+    <script>
+        function openOption(option) {
+            var contentDiv = document.getElementById("content");
+            // Aqui você pode implementar a lógica para abrir a opção selecionada
+            // Por exemplo, você pode carregar o conteúdo da opção de uma fonte externa e exibi-lo na div de conteúdo
+            contentDiv.innerHTML = "<h2>" + option + "</h2>";
+        }
+    </script>
+</body>
+</html>
