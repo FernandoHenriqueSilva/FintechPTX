@@ -10,7 +10,7 @@ COPY . .
 RUN pip install --no-cache-dir flask
 
 # Expõe a porta 5000 para o mundo externo
-EXPOSE 5000
+EXPOSE 5010
 
 # Define o comando padrão a ser executado quando o contêiner é iniciado
 CMD ["python", "app.py"]

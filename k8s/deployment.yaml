@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintechptx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fintechptx
+  template:
+    metadata:
+      labels:
+        app: fintechptx
+    spec:
+      containers:
+      - name: fintechptx
+        image: fernandohs99/fintechptx:v2
+        ports:
+        - containerPort: 5010
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fintechptx
+spec:
+  selector:
+    app: fintechptx
+  ports:
+    - port: 80
+      targetPort: 5010
+      nodePort: 30000
+  type: NodePort
